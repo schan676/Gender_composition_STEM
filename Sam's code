@@ -1,1 +1,41 @@
+# import BeautifulSoup so you can webscrape, RE to use regex
 from bs4 import BeautifulSoup
+import requests
+import re
+import pandas as pd
+
+# website of job market candidates that we want to scrape
+url = "https://www.economics.uci.edu/grad/jobmarket.php"
+
+# get the HTML text from website
+page = requests.get(url)
+
+#stores the html text so we can read it
+soup = BeautifulSoup(page.text, 'html.parser')
+
+# make a file to store the data
+data = []
+
+# 
+profiles = soup.find_all("div", class_ = "two-third")
+
+print(profiles)
+
+for profile in profiles:
+    item = {}
+
+    item['Name'] = profile.find("a").attrs["href"]
+
+print(item['Name'])
+
+
+#website = soup.body.findAll('h3')
+
+#print(soup)
+
+#possible regex expressions
+#https://www.
+#.com
+#.html
+#.pdf
+#"Website"
