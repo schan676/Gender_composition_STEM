@@ -1,41 +1,36 @@
-# import BeautifulSoup so you can webscrape, RE to use regex
 from bs4 import BeautifulSoup
 import requests
-import re
-import pandas as pd
+from urllib.parse import urljoin, urlparse
+import pandas as pd  # Import pandas for creating a DataFrame
 
-# website of job market candidates that we want to scrape
+# Website of job market candidates that we want to scrape
 url = "https://www.economics.uci.edu/grad/jobmarket.php"
 
-# get the HTML text from website
+# Get the HTML text from the website
 page = requests.get(url)
-
-#stores the html text so we can read it
 soup = BeautifulSoup(page.text, 'html.parser')
 
-# make a file to store the data
-data = []
+def get_personal_websites(soup, base_url):
+    unique_urls = []  # Maintain a list to store unique URLs
+    # Find all elements with class "one" and then find all <a> tags within those elements
+    for container in soup.find_all('div', class_='one-third'):
+        for link in container.find_all('a', href=True):
+            href = link.get('href')
+            if href and href not in unique_urls:  # Check if URL is not already in the list
+                unique_urls.append(href)  # Add to the list of unique URLs
+    return unique_urls
 
-# 
-profiles = soup.find_all("div", class_ = "two-third")
+# Get the base URL
+base_url = "{0.scheme}://{0.netloc}".format(urlparse(url))
 
-print(profiles)
+# Extract personal websites from the main page and remove duplicates
+personal_websites = get_personal_websites(soup, base_url)
 
-for profile in profiles:
-    item = {}
+# Create a pandas DataFrame from the list of personal websites
+df = pd.DataFrame(personal_websites, columns=['Personal Websites'])
 
-    item['Name'] = profile.find("a").attrs["href"]
+# Print the DataFrame
+print(df)
 
-print(item['Name'])
-
-
-#website = soup.body.findAll('h3')
-
-#print(soup)
-
-#possible regex expressions
-#https://www.
-#.com
-#.html
-#.pdf
-#"Website"
+# Download CSV File
+df.to_csv("UCI_Econ2024.csv")
