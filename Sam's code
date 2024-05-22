@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 from urllib.parse import urljoin, urlparse
-import pandas as pd  # Import pandas for creating a DataFrame
+import pandas as pd
 
 # Website of job market candidates that we want to scrape
 url = "https://www.economics.uci.edu/grad/jobmarket.php"
@@ -10,27 +10,32 @@ url = "https://www.economics.uci.edu/grad/jobmarket.php"
 page = requests.get(url)
 soup = BeautifulSoup(page.text, 'html.parser')
 
-def get_personal_websites(soup, base_url):
-    unique_urls = []  # Maintain a list to store unique URLs
-    # Find all elements with class "one" and then find all <a> tags within those elements
-    for container in soup.find_all('div', class_='one-third'):
-        for link in container.find_all('a', href=True):
-            href = link.get('href')
-            if href and href not in unique_urls:  # Check if URL is not already in the list
-                unique_urls.append(href)  # Add to the list of unique URLs
+def get_urls_by_text(soup, text):
+    unique_urls = []
+    # Find all elements with class "one-third"
+    one_third_elements = soup.find_all('div', class_='one-third')
+    
+    for element in one_third_elements:
+        # Check if the element contains the specified text
+        if text in element.get_text():
+            for link in element.find_all('a', href=True):
+                href = link.get('href')
+                if href and href not in unique_urls:
+                    unique_urls.append(href)
     return unique_urls
 
 # Get the base URL
 base_url = "{0.scheme}://{0.netloc}".format(urlparse(url))
 
-# Extract personal websites from the main page and remove duplicates
-personal_websites = get_personal_websites(soup, base_url)
+# Extract URLs for CVs and Websites from the main page and remove duplicates
+cv_link = get_urls_by_text(soup, "CV:")
+personal_website = get_urls_by_text(soup, "Website:")
 
-# Create a pandas DataFrame from the list of personal websites
-df = pd.DataFrame(personal_websites, columns=['Personal Websites'])
+# Create a pandas DataFrame with separate columns for CV links and Website links
+df = pd.DataFrame({
+    'CV Link': pd.Series(cv_link),
+    'Personal Website': pd.Series(personal_website)
+})
 
 # Print the DataFrame
 print(df)
-
-# Download CSV File
-df.to_csv("UCI_Econ2024.csv")
