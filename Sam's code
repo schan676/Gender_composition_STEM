@@ -24,6 +24,27 @@ def get_urls_by_text(soup, text):
                     unique_urls.append(href)
     return unique_urls
 
+def get_job_market_paper_links(soup, text):
+    unique_urls = []
+    # Find all elements with class "one" that contain the specified text
+    one_elements_with_text = soup.find_all(lambda tag: tag.name == 'div' 
+                                            and 'one' in tag.get('class', []) 
+                                            and text in tag.get_text() 
+                                            and ("title" not in tag.attrs 
+                                                 or ("title" in tag.attrs 
+                                                     and "CV" not in tag["title"] 
+                                                     and "Website" not in tag["title"])))
+
+    for element in one_elements_with_text:
+        for link in element.find_all('p', title=True):
+            title = link.get('title')
+            if title and "CV" not in title and "Website" not in title:
+                href = link.get('href')
+                if href and href not in unique_urls:
+                    unique_urls.append(href)
+    return unique_urls
+
+
 # Get the base URL
 base_url = "{0.scheme}://{0.netloc}".format(urlparse(url))
 
@@ -31,11 +52,18 @@ base_url = "{0.scheme}://{0.netloc}".format(urlparse(url))
 cv_link = get_urls_by_text(soup, "CV:")
 personal_website = get_urls_by_text(soup, "Website:")
 
-# Create a pandas DataFrame with separate columns for CV links and Website links
+# Extract job market paper links
+job_market_paper_links = get_job_market_paper_links(soup, "Job Market Paper:")
+
+# Create a pandas DataFrame with separate columns for CV links, Website links, and Job Market Paper links
 df = pd.DataFrame({
     'CV Link': pd.Series(cv_link),
-    'Personal Website': pd.Series(personal_website)
+    'Personal Website': pd.Series(personal_website),
+    'Job Market Paper Link': pd.Series(job_market_paper_links)
 })
 
 # Print the DataFrame
 print(df)
+
+# Save the DataFrame to a CSV file
+df.to_csv('job_market_candidates.csv', index=False)
