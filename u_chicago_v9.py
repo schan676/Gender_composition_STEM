@@ -91,9 +91,12 @@ for people in values:
 
     data.append(item)
 
-
+if item['name'] == 'Ufuk Akcigit':
+    data.remove(item)
 
 
 df = pd.DataFrame(data)
+
+
 
 df.to_csv("uchicago_econ24.csv")
