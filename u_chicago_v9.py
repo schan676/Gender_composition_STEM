@@ -53,6 +53,73 @@ for people in values:
     
     item = {}
     item['name'] = people.find("a").text # pulls name
+    # i found a page that has this years placements, but i am short on time so I am putting in in
+# manually
+
+    # all academic tenure track positions
+    if 'Santiago Franco' in item['name']:
+        item['placement'] = 'Boston University'
+
+    if 'Sangmin (Simon) Oh' in item['name']:
+        item['placement'] = 'Colmbia GSB'
+
+    if 'Sulagna Dasgupta' in item['name']:
+        item['placement'] = 'Cornell University'
+
+    if 'Toshiaki Komatsu' in item['name']:
+        item['placement'] = 'National Taiwan University'
+
+    if 'Aleksei Oskolkov' in item['name']:
+        item['placement'] = 'Princeton University'
+
+    if 'Estéfano Rubio' in item['name']:
+        item['placement'] = 'Universidad Adolfo Ibanez'
+
+    if 'Marcos Sora' in item['name']:
+        item['placement'] = 'University of Illinois at Urbana-Champaign'
+
+    if 'Michael Varley' in item['name']:
+        item['placement'] = 'University of Kentucky'
+
+    if 'Zhiyu Fu' in item['name']:
+        item['placement'] = 'Washington University in St. Louis'
+
+    # all academic non tenure track
+    if 'Ivan Kwok' in item['name']:
+        item['placement'] = 'Brown University'
+
+    if 'Sidharth Sah' in item['name']:
+        item['placement'] = 'New York University Center for Data Science'
+
+    # public sector
+    if 'Michael Galper' in item['name']:
+        item['placement'] = 'Dapartment of Justice Expert Analysis Group'
+
+    if 'Hazen Eckert' in item['name']:
+        item['placement'] = 'National Security Agency'
+
+    if 'Harshil Sahai' in item['name']:
+        item['placement'] = 'World Bank Young Professionals'
+
+    # private sector
+    if 'Maria Ignacia Cuevas de Saint Pierre' in item['name']:
+        item['placement'] = 'Amazon'
+
+    if 'Nadia Lucas' in item['name']:
+        item['placement'] = 'Amazon'
+
+    if 'Jingtao Zheng' in item['name']:
+        item['placement'] = 'Citadel Securities'
+
+    if 'Scott Behmer' in item['name']:
+        item['placement'] = 'RAND'
+
+    # post doc
+    if 'Shanon Hsu-Ming Hsu' in item['name']:
+        item['placement'] = 'The University of Chicago'
+
+    if 'Elena Istomina' in item['name']:
+        item['placement'] = 'The University of Chicago'
     item['school'] = "University of Chicago" # school is the same for everyone
     item['year'] = 2024 # year is the same for everyone
     #item['prim_research_focus'] = people.find("span").strong
@@ -89,11 +156,13 @@ for people in values:
         item['research_focus_2'] = split_text[2]
         item['references'] = split_text[3]
 
+
+
+
     data.append(item)
 
 if item['name'] == 'Ufuk Akcigit':
     data.remove(item)
-
 
 df = pd.DataFrame(data)
 
