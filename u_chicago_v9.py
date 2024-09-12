@@ -52,73 +52,77 @@ values = soup.find_all("div", class_="paragraph paragraph--type--uc-text-block p
 for people in values:
     
     item = {}
-    item['name'] = people.find("a").text # pulls name
+    
+    name = people.find("a").text # pulls name
+    full_name = name.split(' ')
+    item['first_name'] = full_name[0]
+    item['last_name'] = full_name[1]
     # i found a page that has this years placements, but i am short on time so I am putting in in
 # manually
 
     # all academic tenure track positions
-    if 'Santiago Franco' in item['name']:
+    if 'Santiago' in item['first_name']:
         item['placement'] = 'Boston University'
 
-    if 'Sangmin (Simon) Oh' in item['name']:
+    if 'Sangmin' in item['first_name']:
         item['placement'] = 'Colmbia GSB'
 
-    if 'Sulagna Dasgupta' in item['name']:
+    if 'Sulagna' in item['first_name']:
         item['placement'] = 'Cornell University'
 
-    if 'Toshiaki Komatsu' in item['name']:
+    if 'Toshiaki' in item['first_name']:
         item['placement'] = 'National Taiwan University'
 
-    if 'Aleksei Oskolkov' in item['name']:
+    if 'Aleksei' in item['first_name']:
         item['placement'] = 'Princeton University'
 
-    if 'Estéfano Rubio' in item['name']:
+    if 'Estéfano' in item['first_name']:
         item['placement'] = 'Universidad Adolfo Ibanez'
 
-    if 'Marcos Sora' in item['name']:
+    if 'Marcos' in item['first_name']:
         item['placement'] = 'University of Illinois at Urbana-Champaign'
 
-    if 'Michael Varley' in item['name']:
+    if 'Michael' in item['first_name']:
         item['placement'] = 'University of Kentucky'
 
-    if 'Zhiyu Fu' in item['name']:
+    if 'Zhiyu' in item['first_name']:
         item['placement'] = 'Washington University in St. Louis'
 
     # all academic non tenure track
-    if 'Ivan Kwok' in item['name']:
+    if 'Ivan' in item['first_name']:
         item['placement'] = 'Brown University'
 
-    if 'Sidharth Sah' in item['name']:
+    if 'Sidharth' in item['first_name']:
         item['placement'] = 'New York University Center for Data Science'
 
     # public sector
-    if 'Michael Galper' in item['name']:
+    if 'Michael' in item['first_name']:
         item['placement'] = 'Dapartment of Justice Expert Analysis Group'
 
-    if 'Hazen Eckert' in item['name']:
+    if 'Hazen' in item['first_name']:
         item['placement'] = 'National Security Agency'
 
-    if 'Harshil Sahai' in item['name']:
+    if 'Harshil' in item['first_name']:
         item['placement'] = 'World Bank Young Professionals'
 
     # private sector
-    if 'Maria Ignacia Cuevas de Saint Pierre' in item['name']:
+    if 'Maria' in item['first_name']:
         item['placement'] = 'Amazon'
 
-    if 'Nadia Lucas' in item['name']:
+    if 'Nadia' in item['first_name']:
         item['placement'] = 'Amazon'
 
-    if 'Jingtao Zheng' in item['name']:
+    if 'Jingtao' in item['first_name']:
         item['placement'] = 'Citadel Securities'
 
-    if 'Scott Behmer' in item['name']:
+    if 'Scott' in item['first_name']:
         item['placement'] = 'RAND'
 
     # post doc
-    if 'Shanon Hsu-Ming Hsu' in item['name']:
+    if 'Shanon' in item['first_name']:
         item['placement'] = 'The University of Chicago'
 
-    if 'Elena Istomina' in item['name']:
+    if 'Elena' in item['first_name']:
         item['placement'] = 'The University of Chicago'
     item['school'] = "University of Chicago" # school is the same for everyone
     item['year'] = 2024 # year is the same for everyone
@@ -128,10 +132,10 @@ for people in values:
     links = people.find_all('a', href = True) #finds all links 
     for link in links: # stripping the links and sorting them
         if "pdf" in link['href']:
-            item['job_market_paper'] = link['href']
+            item['paper_link'] = link['href']
 
         elif "drive" in link['href']:
-            item['job_market_paper'] = link['href']
+            item['paper_link'] = link['href']
 
         elif "economics.uchicago" in link['href']:
             item['school_website'] = link['href']
@@ -142,26 +146,31 @@ for people in values:
     #defining words to split
     words_to_split_at = ["Primary Research Focus:", "Secondary Research Focus:", "References:", \
                          "Job Market Paper Title:", "Email:"]
+    
+    if item['first_name'] == 'Scott':
+        print(words_to_split_at)
     #creating a regular expression pattern
     pattern = '|'.join(re.escape(word) for word in words_to_split_at)
 
     split_text = re.split(pattern, extra)
 
     if 1< len(split_text) < 6 :
-        item['research_focus_1'] = split_text[1]
-        item['references'] = split_text[2]
+        item['research_focus'] = split_text[1]
+        item['committee_member'] = split_text[2]
 
     elif 5<len(split_text):
-        item['research_focus_1'] = split_text[1]
-        item['research_focus_2'] = split_text[2]
-        item['references'] = split_text[3]
+        item['research_focus'] = split_text[1]
+        item['committee_member'] = split_text[3]
+
+    elif item['first_name'] == 'Scott':
+        item['committee_member'] = split_text[5]
 
 
 
 
     data.append(item)
 
-if item['name'] == 'Ufuk Akcigit':
+if item['first_name'] == 'Ufuk':
     data.remove(item)
 
 df = pd.DataFrame(data)
