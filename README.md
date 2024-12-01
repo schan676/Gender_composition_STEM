@@ -55,35 +55,31 @@ Business
 Public Policy
 
 ## Data Processing Steps
-- Describe the columns, jmc, jm placements, jm types, gender
-Job Market Candidates:
-first_name
-last_name
-school
-gender
-gender_guess
-gender_manual
-year
-school_website
-personal_website
-chair
-committee_member
-field
-cv_link
-jm_paper
-paper_link
-department
-dissertation
-thesis
-Job Market Placements:
-placement
-academic (binary)
-placement_type
-postdoc
-permanent_job
-Packages and Methods:
-Gender guesser package
-Infer academic/non-academic placement with ChatGPT
+### Identifying the attribute
+| Column Name         | Description                            |
+|---------------------|----------------------------------------|
+| name                | Full name                             |
+| gender_guess        | Gender using `gender_guesser`         |
+| school_website      | School website                        |
+| field               | Field of interest                     |
+| paper_name          | Job market paper name                 |
+| paper_link          | Link to job market paper              |
+| chair               | Chair                                 |
+| committee_members   | Committee members                     |
+| year                | Year of completion                    |
+| university          | University name                       |
+| department          | Department                            |
+| cv_link             | Link to CV                            |
+| thesis              | Dummy if thesis is downloaded         |
+| personal_website    | Personal website                      |
+| placement           | Where candidates were placed          |
+| placement_type      | Type of placement                     |
+| academic            | Dummy if `placement_type` is academic |
+| postdoc             | Dummy if placement was postdoc        |
+| gender_manual       | Manual fixes for gender               |
+| thesis_name         | Name of thesis                        |
+
+### Data Scra
 
 ## Code Guide - refer to files with brief description
 - A table of school - correspond to the file + brief description
