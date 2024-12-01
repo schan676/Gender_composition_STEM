@@ -1,14 +1,14 @@
 # Overview of Possible Gender Inequality Among TOP 20 Economics PhD Programs
 ## Table of Content
--[Project Descriptionk](#project-descriptionk)
+- [Project Descriptionk](#project-descriptionk)
 
--[Targeted Institutions](#targeted-institutions)
+- [Targeted Institutions](#targeted-institutions)
 
--[Data Processing Steps](#data-processing-steps)
+- [Data Processing Steps](#data-processing-steps)
 
--[Code Guide - refer to files with brief description](#code-guide---refer-to-files-with-brief-description)
+- [Code Guide - refer to files with brief description](#code-guide---refer-to-files-with-brief-description)
 
-[Analysis](#analysis)
+- [Analysis](#analysis)
 
 ## Project Overview
 ### About
@@ -188,7 +188,25 @@ here should be our big dataset
     ```
 
 ### Corresponding files
-
+| File Name                                    | Description                                                                                       |
+|---------------------------------------------|---------------------------------------------------------------------------------------------------|
+| [NYU_code.py](code/build/NYU_code.py)       | Python script for NYU data scraping and analysis.                                                |
+| [UCB_UCHICAGO_SCRAPE.ipynb](code/build/UCB_UCHICAGO_SCRAPE.ipynb) | Jupyter notebook for scraping UCB and UChicago candidate information.                           |
+| [UCD_EconPhD.ipynb](code/build/UCD_EconPhD.ipynb) | Jupyter notebook for UC Davis Economics PhD data extraction and processing.                     |
+| [UCD_PoliSciPhD.ipynb](code/build/UCD_PoliSciPhD.ipynb) | Jupyter notebook for UC Davis Political Science PhD data handling.                              |
+| [UCM_EconPhD.ipynb](code/build/UCM_EconPhD.ipynb) | Jupyter notebook for UC Merced Economics PhD data analysis.                                     |
+| [UCM_PoliSciPhD.ipynb](code/build/UCM_PoliSciPhD.ipynb) | Jupyter notebook for UC Merced Political Science PhD data scraping and processing.              |
+| [UCSD_BusinessPhD.ipynb](code/build/UCSD_BusinessPhD.ipynb) | Jupyter notebook for UCSD Business PhD data analysis.                                           |
+| [UCSD_EconPhD.ipynb](code/build/UCSD_EconPhD.ipynb) | Jupyter notebook for UCSD Economics PhD data extraction and cleaning.                           |
+| [UCSD_PoliSciPhD.ipynb](code/build/UCSD_PoliSciPhD.ipynb) | Jupyter notebook for UCSD Political Science PhD candidate analysis.                             |
+| [chicago8.py](code/build/chicago8.py)       | Python script for processing University of Chicago PhD candidate information.                    |
+| [nwecon2.py](code/build/nwecon2.py)         | Python script for Northwestern Economics candidate data processing.                              |
+| [stanford(name w: personal website).py](code/build/stanford(name w: personal website).py) | Script for Stanford PhD candidate data scraping with personal website extraction.               |
+| [test6.py](code/build/test6.py)             | General-purpose test script for data extraction and processing.                                  |
+| [u_chicago_v9.py](code/build/u_chicago_v9.py) | Python script for advanced data handling of University of Chicago PhD candidates.               |
+| [upenn_econ.csv](code/build/upenn_econ.csv) | CSV file containing Economics PhD candidate data from the University of Pennsylvania.            |
+| [yale_econ.ipynb](code/build/yale_econ.ipynb) | Jupyter notebook for Yale Economics PhD candidate data analysis.                                |
+| [yale_econ_phd_candidates.csv](code/build/yale_econ_phd_candidates.csv) | CSV file containing PhD candidate information from Yale Economics department.                   |
 
 ## Analysis
 
