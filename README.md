@@ -1,14 +1,9 @@
 # Overview of Possible Gender Inequality Among TOP 20 Economics PhD Programs
 ## Table of Content
-[Project Descriptionk](#project-descriptionk)
-
-[Targeted Institutions](#targeted-institutions)
-
-[Schools & Departments](#schools-&-departments)
-
-[Data Processing Steps](#data-processing-steps)
-
-[Code Guide - refer to files with brief description](#code-guide---refer-to-files-with-brief-description)
+-[Project Descriptionk](#project-descriptionk)
+-[Targeted Institutions](#targeted-institutions)
+-[Data Processing Steps](#data-processing-steps)
+-[Code Guide - refer to files with brief description](#code-guide---refer-to-files-with-brief-description)
 
 [Analysis](#analysis)
 
@@ -52,13 +47,40 @@ In addition, we also include the other institutions in the UC system:
 - University of California, Riverside
 - University of California, Irvine
 
-## Schools & Departments
-- Scrape/processed 
-Departments scraped/processed:
-Economics
-Political Science
-Business
-Public Policy
+### Schools & Departments
+|University                            |department       |
+|--------------------------------------|-----------------|
+|Harvard University                    |Economics        |
+|Massachusetts Institute of Technology |Economics        |
+|Stanford                              |Economics        |
+|Princeton                             |Economics        |
+|University of California, Berkeley    |Economics        |
+|University of California, Berkeley    |HASS             |
+|University of California, Berkeley    |ARE              |
+|University of Chicago                 |Buisness         |
+|University of Chicago                 |Economics        |
+|Yale University                       |Economics        |
+|Northwestern                          |Economics        |
+|Northwestern                          |Economics        |
+|Columbia University                   |Economics        |
+|University of Pennsylvania            |Economics        |
+|New York Univiersity                  |Economics        |
+|University of California, Los Aangeles|Economics        |
+|University of Michigan, Ann Arbor     |Economics        |
+|California institue of Technology     |Economics        |
+|Cornell University                    |Economics        |
+|UC San Diego                          |Business         |
+|UC San Diego                          |Economics        |
+|UC San Diego                          |Political Science|
+|University of Wisconsin, Madison      |Economics        |
+|Duke University                       |Economics        |
+|University of Minnesota, Twin Cities  |Economics        |
+|Brown University                      |Economics        |
+|UC Merced                             |Economics        |
+|UC Merced                             |Political Science|
+|UC Davis                              |Economics        |
+|UC Davis                              |Political Science|
+
 
 ## Data Processing Steps
 ### Identifying the attribute
@@ -84,7 +106,9 @@ Public Policy
 | postdoc             | Dummy if placement was postdoc        |
 | gender_manual       | Manual fixes for gender               |
 | thesis_name         | Name of thesis                        |
-### Data Scraing - Overview
+### Data Scraping - Overview
+This table shows our current status with retrieving the relevant data:
+
 |school                                |department       |jmc available?|jmc years available|have we scraped it?(JMC|placement available?(name,instituion,job title)|placement years available|have we scraped it?(historical placements)|Contributor        |website link                                                       |
 |--------------------------------------|-----------------|--------------|-------------------|-----------------------|-----------------------------------------------|-------------------------|------------------------------------------|-------------------|-------------------------------------------------------------------|
 |Harvard University                    |Economics        |1             |[2024]             |0                      |name. institution                              |[2005,2023]              |0                                         |Chris Luo          |https://www.economics.harvard.edu/job-placement                    |
@@ -120,6 +144,43 @@ Public Policy
 
 
 ## Code Guide - refer to files with brief description
+### Data Scraping using Python
+1. **Import Required Packages**:
+   - Use `requests` to fetch webpage content.
+   - Use `BeautifulSoup` from `bs4` for parsing HTML data.
+
+   ```python
+   import requests
+   from bs4 import BeautifulSoup
+   ```
+2. **Fetch Webpage Content**:
+	- Use requests.get(URL) to retrieve the HTML or text from a website.
+    ```python
+    response = requests.get("https://example.com")
+    html_content = response.text
+     ```
+3. **Parse HTML Content**:
+	- Use BeautifulSoup to convert raw HTML into a navigable object.
+    ```python
+    soup = BeautifulSoup(html_content, "html.parser")
+    ```
+4. **Extract Data**:
+	- Locate elements using tags, classes, or IDs (e.g., soup.find_all('tag')).
+    ```python
+    data = soup.find_all('div', class_='data-class')
+    ```
+5. **Clean and Structure Data**:
+    - Process extracted data into a structured format (e.g., list or dictionary).
+6. **Save Data to CSV**:
+    - Use pandas or csv to save data for analysis.
+    ```python
+    import pandas as pd
+    df = pd.DataFrame(data)
+    df.to_csv("output.csv", index=False)
+    ```
+
+#### Correponding files
+
 
 ## Analysis
 
