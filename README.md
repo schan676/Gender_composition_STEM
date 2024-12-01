@@ -9,10 +9,7 @@
 
 ## About the Project
 About
-We scraped job market candidate information from the top 20 Economics PhD Programs in the U.S. including gender, fields of study, and dissertation topics. 
-
-We also scraped job market placement information from the same schools to track the employment status (company/institution, position) of each PhD student upon graduation.
-
+We scraped job market candidate information from the top 20 Economics PhD Programs in the U.S. including gender, fields of study, and dissertation topics. We also scraped job market placement information from the same schools to track the employment status (company/institution, position) of each PhD student upon graduation.
 We then conducted summary statistics and regression analyses to understand the correlation between gender and job placement.
 Contributions:
 -
@@ -22,32 +19,34 @@ Top contributors:
 -
 
 ## TOP 20 School
-Best economics schools (US News, 2022):
-Harvard
-MIT
-Stanford
-Princeton
-University of California, Berkeley
-University of Chicago
-Yale University
-Northwestern University
-Columbia University
-University of Pennsylvania
-New York University
-University of California, Los Angeles
-University of Michigan, Ann Arbor
-California Institute of Technology
-Cornell University
-University of California, San Diego
-University of Wisconsin, Madison
-Duke University
-University of Minnesota, Twin Cities
-Brown University
-Additional schools:
-University of California, Davis
-University of California, Merced
-University of California, Riverside
-University of California, Irvine
+### Best Economics Schools (US News, 2022)
+
+- Harvard
+- MIT
+- Stanford
+- Princeton
+- University of California, Berkeley
+- University of Chicago
+- Yale University
+- Northwestern University
+- Columbia University
+- University of Pennsylvania
+- New York University
+- University of California, Los Angeles
+- University of Michigan, Ann Arbor
+- California Institute of Technology
+- Cornell University
+- University of California, San Diego
+- University of Wisconsin, Madison
+- Duke University
+- University of Minnesota, Twin Cities
+- Brown University
+
+### Additional Schools:
+- University of California, Davis
+- University of California, Merced
+- University of California, Riverside
+- University of California, Irvine
 
 ## List of Schools & Departments
 - Scrape/processed 
