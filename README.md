@@ -1,6 +1,6 @@
 # Overview of Possible Gender Inequality Among TOP 20 Economics PhD Programs
 [Project Descriptionk](#project-descriptionk)
-[TOP 20 School](#top-20-school)
+[Targeted Institutions](#targeted-institutions)
 [List of Schools & Departments](#list-of-schools-&-departments)
 [Data Processing Steps](#data-processing-steps)
 [Code Guide - refer to files with brief description](#code-guide---refer-to-files-with-brief-description)
@@ -8,17 +8,16 @@
 
 ## Project Overview
 ### About
-We scraped job market candidate information from the top 20 Economics PhD Programs in the U.S., including gender, fields of study, and dissertation topics. We also scraped job market placement information from the same schools to track the employment status (company/institution, position) of each PhD student upon graduation.
+For this project, we collected comprehensive data on job market candidates from the top 20 Economics PhD programs in the United States, including information on gender, fields of study, and dissertation topics. Additionally, we gathered job placement data from the same institutions to analyze the employment outcomes (e.g., company or institution, position) of graduating PhD students.
 
-We then conducted summary statistics and regression analyses to understand the correlation between gender and job placement.
-
+Our analysis involved generating summary statistics and conducting regression analyses to examine the relationship between gender and job placement outcomes.
 ### Contributions:
 - Contribution 1
 - Contribution 2
 
-## TOP 20 School
-### Best Economics Schools (US News, 2022)
-
+## Targeted Institutions
+### Top 20  Economics Schools (US News, 2022)
+A majority of the data are from the very best Economics institution ranked by the US News.
 - Harvard
 - MIT
 - Stanford
@@ -41,6 +40,7 @@ We then conducted summary statistics and regression analyses to understand the c
 - Brown University
 
 ### Additional Schools:
+In addition, we also include the other institutions in the UC system
 - University of California, Davis
 - University of California, Merced
 - University of California, Riverside
@@ -79,7 +79,7 @@ Public Policy
 | gender_manual       | Manual fixes for gender               |
 | thesis_name         | Name of thesis                        |
 
-### Data Scra
+### Data Scraing
 
 ## Code Guide - refer to files with brief description
 - A table of school - correspond to the file + brief description
