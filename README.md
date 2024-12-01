@@ -1,8 +1,11 @@
 # Overview of Possible Gender Inequality Among TOP 20 Economics PhD Programs
 ## Table of Content
 -[Project Descriptionk](#project-descriptionk)
+
 -[Targeted Institutions](#targeted-institutions)
+
 -[Data Processing Steps](#data-processing-steps)
+
 -[Code Guide - refer to files with brief description](#code-guide---refer-to-files-with-brief-description)
 
 [Analysis](#analysis)
@@ -106,7 +109,7 @@ In addition, we also include the other institutions in the UC system:
 | postdoc             | Dummy if placement was postdoc        |
 | gender_manual       | Manual fixes for gender               |
 | thesis_name         | Name of thesis                        |
-### Data Scraping - Overview
+### Data Scraping 
 This table shows our current status with retrieving the relevant data:
 
 |school                                |department       |jmc available?|jmc years available|have we scraped it?(JMC|placement available?(name,instituion,job title)|placement years available|have we scraped it?(historical placements)|Contributor        |website link                                                       |
@@ -141,6 +144,11 @@ This table shows our current status with retrieving the relevant data:
 |UC Merced                             |Political Science|              |[2024]             |1                      |                                               |                         |                                          |Amy Dao            |                                                                   |
 |UC Davis                              |Economics        |              |[2024]             |1                      |                                               |                         |                                          |Amy Dao            |                                                                   |
 |UC Davis                              |Political Science|              |[2024]             |1                      |                                               |                         |                                          |Amy Dao            |                                                                   |
+
+### Data Cleaning
+here should be our big dataset
+
+
 
 
 ## Code Guide - refer to files with brief description
@@ -179,7 +187,7 @@ This table shows our current status with retrieving the relevant data:
     df.to_csv("output.csv", index=False)
     ```
 
-#### Correponding files
+### Corresponding files
 
 
 ## Analysis
