@@ -201,7 +201,7 @@ here should be our big dataset
 | [UCSD_PoliSciPhD.ipynb](code/build/UCSD_PoliSciPhD.ipynb) | Jupyter notebook for UCSD Political Science PhD candidate analysis.                             |
 | [chicago8.py](code/build/chicago8.py)       | Python script for processing University of Chicago PhD candidate information.                    |
 | [nwecon2.py](code/build/nwecon2.py)         | Python script for Northwestern Economics candidate data processing.                              |
-| [stanford(name w: personal website).py](code/build/stanford(name w: personal website).py) | Script for Stanford PhD candidate data scraping with personal website extraction.               |
+| [stanford.py](code/build/stanford.py) | Script for Stanford PhD candidate data scraping with personal website extraction.               |
 | [test6.py](code/build/test6.py)             | General-purpose test script for data extraction and processing.                                  |
 | [u_chicago_v9.py](code/build/u_chicago_v9.py) | Python script for advanced data handling of University of Chicago PhD candidates.               |
 | [upenn_econ.csv](code/build/upenn_econ.csv) | CSV file containing Economics PhD candidate data from the University of Pennsylvania.            |
