@@ -151,11 +151,13 @@ here should be our big dataset
 
 
 
-## Code Guide - refer to files with brief description
+## Code Guide 
 ### Data Scraping using Python
+Here is a **very** brief overview of how data scraping works with Python.
 1. **Import Required Packages**:
-   - Use `requests` to fetch webpage content.
-   - Use `BeautifulSoup` from `bs4` for parsing HTML data.
+    - To start, you should install and import required packages.
+    - Use `requests` to fetch webpage content.
+    - Use `BeautifulSoup` from `bs4` for parsing HTML data.
 
    ```python
    import requests
