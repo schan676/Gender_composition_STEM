@@ -207,27 +207,27 @@ Here is a **very** brief overview of how data scraping works with Python.
 
 ### Corresponding files
 Please refer to file_guide spreadsheet to see a more specific format of this section of the Readme:
-|School                              |File name                                |Description                                                                  |
-|------------------------------------|-----------------------------------------|-----------------------------------------------------------------------------|
-|NYU                                 |NYU_code.py                              |Scrapes NYU JMC data and performs analysis.                                  |
-|UCB and UChicago                    |UCB_UCHICAGO_SCRAPE.ipynb                |Scrapes JMC information and processes data.                                  |
-|UC Davis Economics PhD              |UCD_EconPhD.ipynb                        |Extracts and processes Economics PhD data.                                   |
-|UC Davis Political Science PhD      |UCD_PoliSciPhD.ipynb                     |Handles Political Science PhD data scraping and processing.                  |
-|UC Merced Economics PhD             |UCM_EconPhD.ipynb                        |Analyzes Economics PhD data.                                                 |
-|UC Merced Political Science PhD     |UCM_PoliSciPhD.ipynb                     |Scrapes and processes Political Science PhD data.                            |
-|UCSD Business PhD                   |UCSD_BusinessPhD.ipynb                   |Analyzes Business PhD data.                                                  |
-|UCSD Economics PhD                  |UCSD_EconPhD.ipynb                       |Extracts and cleans Economics PhD data.                                      |
-|UCSD Political Science PhD          |UCSD_PoliSciPhD.ipynb                    |Analyzes Political Science PhD candidate data.                               |
-|University of Chicago               |chicago8.py                              |Processes PhD candidate information.                                         |
-|Northwestern Economics              |nwecon2.py                               |Processes Economics candidate data.                                          |
-|Stanford                            |stanford.py                              |Scrapes PhD candidate data and extracts personal website links.              |
-|General-purpose                     |test6.py                                 |Extracts data and performs processing.                                       |
-|University of Chicago (advanced)    |u_chicago_v9.py                          |Handles advanced data processing for PhD candidates.                         |
-|University of Pennsylvania Economics|upenn_econ.csv                           |Contains Economics PhD candidate data.                                       |
-|Yale                                |yale_econ_jm_candidates.ipynb            |Script for current (2023-2024) Yale Economics PhD candidate website scraping.|
-|Yale                                |yale_econ_jm_candidates_v2.ipynb         |Script for past (2019-2022) Yale Economics PhD candidate web scraping.       |
-|Yale                                |yale_econ_jm_placements.ipynb            |Script for Yale Economics PhD job placements.                                |
-|Yale                                |yale_econ_jm_candidates_wayback_links.csv|CSV file with Wayback Machine links for past Yale Economics PhD candidates   |
+| School                              | File name                                  | Description                                                                  |
+|------------------------------------|-------------------------------------------|-----------------------------------------------------------------------------|
+| NYU                                 | [code/build/NYU_code.py](code/build/NYU_code.py)                              | Scrapes NYU JMC data and performs analysis.                                  |
+| UCB and UChicago                    | [code/build/UCB_UCHICAGO_SCRAPE.ipynb](code/build/UCB_UCHICAGO_SCRAPE.ipynb)  | Scrapes JMC information and processes data.                                  |
+| UC Davis Economics PhD              | [code/build/UCD_EconPhD.ipynb](code/build/UCD_EconPhD.ipynb)                  | Extracts and processes Economics PhD data.                                   |
+| UC Davis Political Science PhD      | [code/build/UCD_PoliSciPhD.ipynb](code/build/UCD_PoliSciPhD.ipynb)            | Handles Political Science PhD data scraping and processing.                  |
+| UC Merced Economics PhD             | [code/build/UCM_EconPhD.ipynb](code/build/UCM_EconPhD.ipynb)                  | Analyzes Economics PhD data.                                                 |
+| UC Merced Political Science PhD     | [code/build/UCM_PoliSciPhD.ipynb](code/build/UCM_PoliSciPhD.ipynb)            | Scrapes and processes Political Science PhD data.                            |
+| UCSD Business PhD                   | [code/build/UCSD_BusinessPhD.ipynb](code/build/UCSD_BusinessPhD.ipynb)        | Analyzes Business PhD data.                                                  |
+| UCSD Economics PhD                  | [code/build/UCSD_EconPhD.ipynb](code/build/UCSD_EconPhD.ipynb)                | Extracts and cleans Economics PhD data.                                      |
+| UCSD Political Science PhD          | [code/build/UCSD_PoliSciPhD.ipynb](code/build/UCSD_PoliSciPhD.ipynb)          | Analyzes Political Science PhD candidate data.                               |
+| University of Chicago               | [code/build/chicago8.py](code/build/chicago8.py)                              | Processes PhD candidate information.                                         |
+| Northwestern Economics              | [code/build/nwecon2.py](code/build/nwecon2.py)                                | Processes Economics candidate data.                                          |
+| Stanford                            | [code/build/stanford.py](code/build/stanford.py)                              | Scrapes PhD candidate data and extracts personal website links.              |
+| General-purpose                     | [code/build/test6.py](code/build/test6.py)                                    | Extracts data and performs processing.                                       |
+| University of Chicago (advanced)    | [code/build/u_chicago_v9.py](code/build/u_chicago_v9.py)                      | Handles advanced data processing for PhD candidates.                         |
+| University of Pennsylvania Economics| [code/build/upenn_econ.csv](code/build/upenn_econ.csv)                        | Contains Economics PhD candidate data.                                       |
+| Yale                                | [code/build/yale_econ_jm_candidates.ipynb](code/build/yale_econ_jm_candidates.ipynb) | Script for current (2023-2024) Yale Economics PhD candidate website scraping. |
+| Yale                                | [code/build/yale_econ_jm_candidates_v2.ipynb](code/build/yale_econ_jm_candidates_v2.ipynb) | Script for past (2019-2022) Yale Economics PhD candidate web scraping.       |
+| Yale                                | [code/build/yale_econ_jm_placements.ipynb](code/build/yale_econ_jm_placements.ipynb) | Script for Yale Economics PhD job placements.                                |
+| Yale                                | [code/build/yale_econ_jm_candidates_wayback_links.csv](code/build/yale_econ_jm_candidates_wayback_links.csv) | CSV file with Wayback Machine links for past Yale Economics PhD candidates   |
 
 
 ## Analysis
