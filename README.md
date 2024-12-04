@@ -1,6 +1,6 @@
 # Overview of Possible Gender Inequality Among TOP 20 Economics PhD Programs
 ## Table of Content
-- [Project Descriptionk](#project-descriptionk)
+- [Project Overview](#project-overview)
 
 - [Targeted Institutions](#targeted-institutions)
 
@@ -16,8 +16,12 @@ For this project, we collected comprehensive data on job market candidates from 
 
 Our analysis involved generating summary statistics and conducting regression analyses to examine the relationship between gender and job placement outcomes.
 ### Contributions:
-- Contribution 1
-- Contribution 2
+- Lea Angelakos
+- Samantha Chan
+- Amy Dao
+- Chris Luo
+- Jia Yi (Tracy) Zhao
+
 
 ## Targeted Institutions
 ### Top 20  Economics Schools (US News, 2022)
@@ -109,6 +113,7 @@ In addition, we also include the other institutions in the UC system:
 | postdoc             | Dummy if placement was postdoc        |
 | gender_manual       | Manual fixes for gender               |
 | thesis_name         | Name of thesis                        |
+
 ### Data Scraping 
 This table shows our current status with retrieving the relevant data:
 
@@ -146,9 +151,14 @@ This table shows our current status with retrieving the relevant data:
 |UC Davis                              |Political Science|              |[2024]             |1                      |                                               |                         |                                          |Amy Dao            |                                                                   |
 
 ### Data Cleaning
-here should be our big dataset
-
-
+Here is an excerpt of our merged dataset, refer to [this](data/clean/gender_gap_PhD_STEM.csv) for detail information: 
+| Name               | Gender Guess | School Website                                   | Field                                      | Paper Name                                         | Paper Link                                   | Chair                          | Committee Member                            | Year  | University           | Placement                                      | Placement Type   | Academic | Postdoc | Degree | References |
+|--------------------|--------------|------------------------------------------------|-------------------------------------------|---------------------------------------------------|----------------------------------------------|-------------------------------|---------------------------------------------|-------|----------------------|------------------------------------------------|------------------|----------|---------|--------|-----------|
+| Dong Woo Hahm      | andy         | http://dongwoohahm.com                         | Applied Microeconomics, Economics of Education, Labor | Leveraging Uncertainties to Infer Preferences: An Application | [Link](https://econ.columbia.edu/wp-content/uploads/s...) | Yeon-Koo Che, Miguel Urquiola | Pierre-André Chiappori, YingHua He           | 2024  | Columbia University  | University of Southern California (Teaching) | Academic         | 1.0      | 0.0     | NaN    | NaN       |
+| Susannah Scanlan   | female       | https://econ.columbia.edu/e/susannah-scanlan/ | Macroeconomics, Econometrics              | Attention Allocation and the Factor Structure     | [Link](https://econ.columbia.edu/wp-content/uploads/s...) | Serena Ng, Michael Woodford   | Hassan Afrouzi, Jennifer La'O               | 2024  | Columbia University  | Capital Fund Management                       | International Org | 0.0      | 0.0     | NaN    | NaN       |
+| Seung-hun Lee      | unknown      | https://seunghunlee918.github.io              | Development Economics, Political Economy, Public Policy | Organized Crime, Local Politicians, and State Capacity | [Link](https://econ.columbia.edu/wp-content/uploads/s...) | Suresh Naidu                  | Michael Best, Rodrigo Soares                | 2024  | Columbia University  | Post-doc HKUST-SNUTaipei School of Economics | Academic         | 1.0      | 1.0     | NaN    | NaN       |
+| Qianyang Zhang     | unknown      | http://qianyangz.github.io                    | Industrial Organization, Microeconomics, Urban Economics | Equilibrium Effects of Energy Efficiency Disclosures | [Link](https://econ.columbia.edu/wp-content/uploads/s...) | Don Davis, David Weinstein    | Gautam Gowrisankaran                         | 2024  | Columbia University  | Amazon                                        | Industry         | 0.0      | 0.0     | NaN    | NaN       |
+| Parijat Lal        | male         | http://www.parijatlal.com                     | Development Economics, Public Economics, Labor | Cooperatives, Competition, and Compensation: Evidence from... | [Link](https://econ.columbia.edu/wp-content/uploads/s...) | Michael Best                   | Joseph Stiglitz, Eric Verhoogen, Jack Willis | 2024  | Columbia University  | Post-doc Columbia Business School            | Academic         | 1.0      | 1.0     | NaN    | NaN       |
 
 
 ## Code Guide 
@@ -158,24 +168,23 @@ Here is a **very** brief overview of how data scraping works with Python.
     - To start, you should install and import required packages.
     - Use `requests` to fetch webpage content.
     - Use `BeautifulSoup` from `bs4` for parsing HTML data.
-
    ```python
    import requests
    from bs4 import BeautifulSoup
    ```
 2. **Fetch Webpage Content**:
-	- Use requests.get(URL) to retrieve the HTML or text from a website.
+    - Use requests.get(URL) to retrieve the HTML or text from a website.
     ```python
     response = requests.get("https://example.com")
     html_content = response.text
      ```
 3. **Parse HTML Content**:
-	- Use BeautifulSoup to convert raw HTML into a navigable object.
+    - Use BeautifulSoup to convert raw HTML into a navigable object.
     ```python
     soup = BeautifulSoup(html_content, "html.parser")
     ```
 4. **Extract Data**:
-	- Locate elements using tags, classes, or IDs (e.g., soup.find_all('tag')).
+    - Locate elements using tags, classes, or IDs (e.g., soup.find_all('tag')).
     ```python
     data = soup.find_all('div', class_='data-class')
     ```
@@ -190,6 +199,7 @@ Here is a **very** brief overview of how data scraping works with Python.
     ```
 
 ### Corresponding files
+Please refer to file_guide spreadsheet to see a more specific format of this section of the Readme:
 | File Name                                    | Description                                                                                       |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------|
 | [NYU_code.py](code/build/NYU_code.py)       | Python script for NYU data scraping and analysis.                                                |
@@ -211,4 +221,11 @@ Here is a **very** brief overview of how data scraping works with Python.
 | [yale_econ_phd_candidates.csv](code/build/yale_econ_phd_candidates.csv) | CSV file containing PhD candidate information from Yale Economics department.                   |
 
 ## Analysis
+### Key Insights
+- **Placement by Type**:
+  - 60.48% of candidates were placed in academic positions.
+  - 13.73% went to industry roles.
+  - 11.08% of candidates became postdocs.
+
+For detailed results, see [Gender Gap PhD STEM Analysis](data/clean/gender_gap_PhD_STEM_analysis.txt).
 
