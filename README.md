@@ -1,4 +1,7 @@
 # Overview of Possible Gender Inequality Among TOP 20 Economics PhD Programs
+## Update
+Please consult [this analysis](https://github.com/jclluo/ECON_PHD_Gender_Inequality_Analysis) for detailed analysis.
+
 ## Table of Content
 - [Project Overview](#project-overview)
 
@@ -245,5 +248,6 @@ Please refer to file_guide spreadsheet to see a more specific format of this sec
 
 The table presents the gender composition across three categories: overall, academic positions, and postdoc positions. It shows that males comprise approximately 70% of the overall dataset, with a slightly lower percentage in academic and postdoc roles (69.6% and 68.6%, respectively). Conversely, females represent about 29.3% overall, with a slightly higher proportion in academic (30.4%) and postdoc (31.4%) roles, indicating a modest increase in female representation in these specific positions.
 
-For detailed results, see [this analysis]((https://github.com/jclluo/ECON_PHD_Gender_Inequality_Analysis)).
+For detailed results, see [this analysis](https://github.com/jclluo/ECON_PHD_Gender_Inequality_Analysis)
+
 
