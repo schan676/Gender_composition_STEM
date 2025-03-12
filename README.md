@@ -17,6 +17,8 @@ Please consult [this analysis](https://github.com/jclluo/ECON_PHD_Gender_Inequal
 ### About
 For this project, we collected comprehensive data on job market candidates from the top 20 Economics PhD programs in the United States, including information on gender, fields of study, and dissertation topics. Additionally, we gathered job placement data from the same institutions to analyze the employment outcomes (e.g., company or institution, position) of graduating PhD students.
 
+The data work on this topic is building on a research idea by Maria de la Paz Ferro & Ida Grigoryeva about studying the effects of differential gender composition in the PhD programs. 
+
 Our analysis involved generating summary statistics and conducting regression analyses to examine the relationship between gender and job placement outcomes.
 ### Contributions:
 - Lea Angelakos
@@ -24,7 +26,7 @@ Our analysis involved generating summary statistics and conducting regression an
 - Amy Dao
 - Chris Luo
 - Jia Yi (Tracy) Zhao
-
+- Idaliya Gruigoryeva (as advisor)
 
 ## Targeted Institutions
 ### Top 20  Economics Schools (US News, 2022)
